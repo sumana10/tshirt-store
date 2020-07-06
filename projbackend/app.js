@@ -22,15 +22,17 @@ const orderRoutes = require("./routes/order");
 const stripRoutes = require("./routes/stripepayment");
 
 //DB Connection
+
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
+    useCreateIndex: true,
   })
   .then(() => {
     console.log("DB CONNECTED");
-  });
+  })
+  .catch(error => console.log(error));
 
 //Middlewares
 app.use(bodyParser.json());
@@ -51,4 +53,5 @@ const port = process.env.PORT || 8000;
 //Starting a server
 app.listen(port, () => {
   console.log(`app is running at ${port}`);
+  
 });
