@@ -42,16 +42,13 @@ var userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-userSchema
-  .virtual("password")
+userSchema.virtual("password")
   .set(function(password) {
-    this._password = password;//private variable
+    this._password = password;
     this.salt = uuidv1();
     this.encry_password = this.securePassword(password);
   })
-  .get(function() {
-    return this._password;
-  });
+  .get(function(){return this._password;});
 
 userSchema.methods = {
   autheticate: function(plainpassword) {
