@@ -65,12 +65,12 @@ const AddCategory = () =>{
         required
         placeholder="For ex. Summer"
         />
-        <button className="btn btn-outline-info" onClick ={onSubmit}>Create Category</button>
+        <button className="btn btn-outline-success" onClick ={onSubmit}>Create Category</button>
       </div>
     </form>
   )
   return (
-    <Base title="Create a category here" description="Add a new category for new tshirt" className="container bg-info p-4">
+    <Base title="Create a category here" description="Add a new category for new tshirt" className="container bg-success p-4">
     <div className="row bg-white rounded p-3">
       <div className="col-md-8 offset-md-2">
         {successMessage()}

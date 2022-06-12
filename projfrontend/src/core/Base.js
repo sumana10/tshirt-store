@@ -22,7 +22,7 @@ const Base = ({
              <div className={className}>{children}</div>
           </div>
           <footer className="footer mt-auto">
-            <div className="container-fluid bg-info text-white text-center py-3">
+            <div className="container-fluid bg-success text-white text-center py-3">
               <h4 className='d-inline mx-2'>If you got any questions, feel free to</h4>
               <button className="btn btn-warning btn-lg rounded">Contact Us</button>
               <div className="container text-center mt-2">

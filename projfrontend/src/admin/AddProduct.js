@@ -167,7 +167,7 @@ const AddProduct = () => {
     <Base
       title="Add a product here!"
       description="Welcome to product creation section"
-      className="container bg-info p-4"
+      className="container bg-success p-4"
     >
       <Link to="/admin/dashboard" className="btn btn-md btn-dark mb-3">
         Admin Home

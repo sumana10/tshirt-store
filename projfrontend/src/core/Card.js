@@ -54,15 +54,16 @@ import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
       )
     }
     return (
-      <div className="card text-white bg-dark border border-info">
-        <div className="card-header lead">{cardTitle}</div>
+      <div className="card text-white bg-dark border border-success">
+        {/*<div className="card-header lead">{cardTitle}</div>*/}
         <div className="card-body">
         {getARedirect(redirect)}
           <ImageHelper product={product} />
-          <p className="lead bg-success font-weight-normal text-wrap">
-            {cardDescription}
+          <div className="card-header bg-success font-weight-normal mb-4">{cardTitle}</div>
+          <p className="lead font-weight-normal text-wrap">
+            {cardDescription} $ {cardPrice}
           </p>
-          <p className="btn btn-success rounded  btn-sm px-4">$ {cardPrice}</p>
+   {/* <p className="btn btn-success rounded  btn-sm px-4">$ {cardPrice}</p>*/}
           <div className="row">
             <div className="d-grid gap-2 col-12 mx-auto">
               {showAddToCart(addtoCart)}
