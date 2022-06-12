@@ -56,9 +56,14 @@ const Signup = () => {
               onChange = {handleChange("email")} />
             </div>
             <div className="form-group">
+             
               <label className="text-light">Password</label>
+              <div>
+              <i class="bi bi-eye-slash" id="togglePassword"></i>
               <input className="form-control" type="password"  value={password}
               onChange = {handleChange("password")} />
+              </div>
+              
             </div>
             <div class="d-grid gap-2 py-2">
               <button onClick={onSubmit} className="btn btn-success" type="button">Submit</button>
@@ -100,7 +105,7 @@ const Signup = () => {
       {errorMessage()}
       {signUpForm()}
       <p className="text-white text-center">
-      {JSON.stringify(values)}
+      {/* {JSON.stringify(values)} */}
       </p>
     </Base>
   );

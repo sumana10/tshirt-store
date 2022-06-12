@@ -15,14 +15,16 @@ exports.signup = (req, res) => {
     });
   }
 
-
+//refers the User model
   const user = new User(req.body);
+// save user 
   user.save((err, user) => {
     if (err) {
       return res.status(400).json({
         err: "NOT able to save user in DB"
       });
     }
+//get the data in postman
     res.json({
       name: user.name,
       email: user.email,

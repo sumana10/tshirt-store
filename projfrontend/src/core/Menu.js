@@ -52,7 +52,7 @@ const Menu = ({history}) =>(
       </Fragment>
       )}
       {isAuthenticated() && (
-        <li className="nav-item">
+        <li className="nav-item" style={{cursor:"pointer"}}>
         <span className="nav-link text-warning" onClick={() =>
         signout(() =>{
           history.push("/")

@@ -13,3 +13,32 @@ body {
   right: 0px;
   left: 0px;
 } */
+.nav-item:hover{
+
+  background-color: green;
+  
+}
+.bi{
+
+  position:absolute; 
+  color:black; 
+  top:51%; 
+  left:71%;
+  
+
+}
+
+@media screen and (max-width:600px){
+
+  .bi{
+
+    position:absolute; 
+    color:black; 
+    top:59%; 
+    left:85%;
+    
+
+  
+  }
+
+}
