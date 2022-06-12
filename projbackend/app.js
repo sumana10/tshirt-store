@@ -6,8 +6,11 @@ const express = require("express");
 const app = express();
 
 //middleware
+//parse incoming request comes from frontend
 const bodyParser = require("body-parser");
+//handles headers and populate cookies
 const cookieParser = require("cookie-parser");
+//
 const cors = require("cors");
 
 //My routes

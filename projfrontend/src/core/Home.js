@@ -26,11 +26,11 @@ export default function Home() {
   return (
     <Base title="Home Page" description="Welcome to the Tshirt Store">
     <div className="row text-center">
-    <h1 className="text-white">All of tshirts</h1>
-    <div className="row">
+    <h1 className="text-white mb-5">All of tshirts</h1>
+    <div className="row mx-auto" style={{maxWidth:"1100px"}}>
     {products.map((tee, index) => {
       return (
-        <div key={index} className="col-4 mb-4">
+        <div key={index} className="col-md-4 col-sm-6 mb-4">
           <Card product={tee}/>
         </div>
       );
