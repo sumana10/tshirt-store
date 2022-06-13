@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-
+// use of express validator
 const { check, validationResult } = require("express-validator");
 const { signout, signin, isSignedIn,signup } = require("../controllers/auth");
 
