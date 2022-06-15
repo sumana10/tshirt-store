@@ -12,13 +12,32 @@ exports.getUserById = (req, res, next, id) => {
     next();
   });
 };
-
+//return present user
+//not showing password
+//not showing salt
 exports.getUser = (req, res) => {
   req.profile.salt = undefined;
   req.profile.encry_password = undefined;
+  req.profile.createdAt = undefined;
+  req.profile.updatedAt = undefined;
   return res.json(req.profile);
 };
+/*Assignment*/
+// exports.getAllUser = (req, res) =>{
 
+//   User.find().exec((err, users)=>{
+
+//     if (err) {
+//       return res.status(400).json({
+//         error: "No Users found"
+//       });
+//     }
+//     return res.json(users);
+
+//   })
+
+// }
+//update an user
 exports.updateUser = (req, res) => {
   User.findByIdAndUpdate(
     { _id: req.profile._id },
@@ -32,6 +51,7 @@ exports.updateUser = (req, res) => {
       }
       user.salt = undefined;
       user.encry_password = undefined;
+      // user.createdAt = undefined;
       res.json(user);
     }
   );
