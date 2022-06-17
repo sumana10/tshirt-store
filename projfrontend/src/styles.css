@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #343a40;
+  background: #001E2B;
 }
 /* footer{
   position: absolute;
@@ -27,8 +27,17 @@ body {
   
 
 }
+.bg-dark, .btn-dark{
+
+  background-color: #001E2B !important;
+
+}
+/* .btn-success, .bg-success{
+  background-color:#00ED64 !important;
+} */
 .card{
   transition: transform 0.4s ease;
+ 
 }
 .card:hover{
   transform: scale(1.05);
