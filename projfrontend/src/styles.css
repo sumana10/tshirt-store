@@ -44,6 +44,10 @@ body {
   /* transition: transform 4s ease-out; */
 }
 
+.admin:hover{
+  transform: scale(1.0);
+}
+
 @media screen and (max-width:600px){
 
   .bi{

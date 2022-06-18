@@ -27,8 +27,9 @@ const Base = ({
               <button className="btn btn-warning btn-lg rounded">Contact Us</button>
               <div className="container text-center mt-2">
               <span className="text-muted">
-                An Amazing <span className="text-white">MERN</span> Bootcamp
+              <span className="text-white"> © Copyright Sumana. </span> All rights reserved.
               </span>
+             
             </div>
             </div>
         </footer>

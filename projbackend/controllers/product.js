@@ -135,14 +135,16 @@ exports.updateProduct = (req, res) => {
 //product listing
 
 exports.getAllProducts = (req, res) => {
+  //major languages handle parameter as string so we need to convert into integer
   let limit = req.query.limit ? parseInt(req.query.limit) : 8;
+  //sorting by some parameter in asc order
   let sortBy = req.query.sortBy ? req.query.sortBy : "_id";
 
   Product.find()
-    .select("-photo")
-    .populate("category")
+    .select("-photo")//don't select photo
+    .populate("category")//
     .sort([[sortBy, "asc"]])
-    .limit(limit)
+    .limit(limit)//how many product u want to see data passed by user or take default
     .exec((err, products) => {
       if (err) {
         return res.status(400).json({
@@ -164,6 +166,8 @@ exports.getAllUniqueCategories = (req, res) => {
   });
 };
 
+//update multiple fields in the collection of product
+//multiple opearation perform together 
 exports.updateStock = (req, res, next) => {
   let myOperations = req.body.order.products.map(prod => {
     return {
