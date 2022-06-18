@@ -42,6 +42,11 @@ const AdminDashBoard = ()=> {
       
         <h4 className="card-header">
           <ul className="list-group">
+          <li className="list-group-item">
+            <span className="badge bg-success me-2">
+            Admin Details
+            </span>
+          </li>
             <li className="list-group-item">
               <span className="badge bg-success me-2">
               Name
@@ -52,11 +57,7 @@ const AdminDashBoard = ()=> {
               Email
               </span>{email}
             </li>
-            <li className="list-group-item">
-            <span className="badge bg-danger me-2">
-            Admin Area
-            </span>
-          </li>
+            
           </ul>
         </h4>
       </div>
@@ -64,10 +65,10 @@ const AdminDashBoard = ()=> {
    }
  
     return (
-      <Base title="Welcome to admin area" description="Manage all product here" className="container bg-success p-4">
-      <div className="row">
-        <div className="col-3"> {adminLeftSide()}</div>
-        <div className="col-9">{adminRightSide()}</div>
+      <Base title="Welcome to admin area" description="Manage all product here" className="container bg-success p-4 mb-4">
+      <div className="row d-flex">
+        <div className="col-md-3 col-xs-12 mb-4"> {adminLeftSide()}</div>
+        <div className="col-md-9 col-xs-12">{adminRightSide()}</div>
       </div>
        
         

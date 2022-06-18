@@ -30,7 +30,9 @@ router.post(
 
 // read routes
 router.get("/product/:productId", getProduct);
+//photo is middleware to get the photo individually
 router.get("/product/photo/:productId", photo);
+
 
 //delete route
 router.delete(
