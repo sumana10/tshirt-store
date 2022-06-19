@@ -40,10 +40,12 @@ exports.getAllOrders = (req, res) => {
     });
 };
 
+//get enum values of each order
 exports.getOrderStatus = (req, res) => {
   res.json(Order.schema.path("status").enumValues);
 };
 
+// locate by id and update status
 exports.updateStatus = (req, res) => {
   Order.update(
     { _id: req.body.orderId },

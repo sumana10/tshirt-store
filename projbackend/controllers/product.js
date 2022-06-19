@@ -2,6 +2,10 @@ const Product = require("../models/product");
 const formidable = require("formidable");
 const _ = require("lodash");
 const fs = require("fs");
+const {
+  errormsg
+}
+ = require("../controllers/errormsg");
 
 exports.getProductById = (req, res, next, id) => {
   Product.findById(id)
@@ -152,17 +156,18 @@ exports.getAllProducts = (req, res) => {
         });
       }
       res.json(products);
+      console.log(products)
     });
 };
 
 exports.getAllUniqueCategories = (req, res) => {
-  Product.distinct("category", {}, (err, category) => {
-    if (err) {
+  Product.distinct("categorym", {}, (err, category) => {
+    if (err || category.length < 1 ) {
       return res.status(400).json({
         error: "NO category found"
       });
     }
-    res.json(category);
+     res.json(category);
   });
 };
 
