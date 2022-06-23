@@ -63,6 +63,19 @@ const Signin = () => {
      );
    
    }
+   const successMessage = () =>{
+    return( 
+      <div className="row">
+       <div className="col-md-6 offset-sm-3 text-left">
+         <div className="alert alert-success"
+           style={{display: success ? "" : "none"}}>
+               New account was created successfully. Please <Link to="/signin">Login here</Link>
+         </div>
+       </div>
+     </div>
+     );
+   
+   }
    const errorMessage = () =>{
      return(
      <div className="row">
@@ -76,7 +89,7 @@ const Signin = () => {
      );
    
    }
-
+   
   const signInForm = () => {
     return (
       <div className="row">
