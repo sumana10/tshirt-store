@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 
 import {signin, authenticate, isAuthenticated} from '../auth/helper';
 
-const Signin = () => {
+const Signin = ({history}) => {
 
   const [values, setValues] = useState({
     email: "sumana@gmail.com",
@@ -46,7 +46,7 @@ const Signin = () => {
       if(user && user.role === 1){
         return <Redirect to="/"/>
       }else{
-        return <Redirect to="/"/>
+        return <Redirect to="/" />
       }
     }
     if(isAuthenticated()){
@@ -122,6 +122,7 @@ const Signin = () => {
       {signInForm()}
       {performRedirect()}
      {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
+      <p>{history.location.pathname}</p>
     </Base>
   );
 };
