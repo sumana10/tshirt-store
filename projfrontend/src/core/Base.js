@@ -14,7 +14,7 @@ const Base = ({
           <div className="container-fluid  min-vh-100">
               <div className="jumbotron text-white text-center">
               {title !=='Home Page' ? ( <>
-                <h2 className="display-4">{title}</h2> 
+                <h2 className="display-4 mt-4">{title}</h2> 
                 <p className="head">{description}</p>
                 </>
                 ) : null}

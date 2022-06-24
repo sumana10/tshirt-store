@@ -82,19 +82,19 @@ const Signin = () => {
       <div className="row">
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
-            <div className="form-group">
+            <div className="form-group mb-2">
               <label className="text-light">Email</label>
               <input className="form-control" type="email" value={email}
-              onChange = {handleChange("email")} />
+              onChange = {handleChange("email")} placeholder="Enter your email"/>
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-2">
               <label className="text-light">Password</label>
               <input className="form-control" type="password" value={password}
-              onChange = {handleChange("password")} />
+              onChange = {handleChange("password")} placeholder="Enter your password"/>
             </div>
-            <div class="d-grid gap-2 py-2">
-              <button onClick={onSubmit} className="btn btn-success" type="button">Submit</button>
+            <div class="d-grid gap-2 py-2 mt-4">
+              <button onClick={onSubmit} className="btn btn-success rounded" type="button">Submit</button>
             </div>
           </form>
         </div>
