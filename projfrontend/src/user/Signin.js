@@ -68,7 +68,7 @@ const Signin = () => {
       <div className="row">
        <div className="col-md-6 offset-sm-3 text-left">
          <div className="alert alert-success"
-           style={{display: success ? "" : "none"}}>
+           style={{display: loading ? "" : "none"}}>
                New account was created successfully. Please <Link to="/signin">Login here</Link>
          </div>
        </div>
