@@ -44,7 +44,7 @@ const Signin = ({history}) => {
     //TODO: do a redirection here
     if(didRedirect){
       if(user && user.role === 1){
-        return <Redirect to="/"/>
+        return <Redirect to="/admin/dashboard"/>
       }else{
         return <Redirect to="/" />
       }
@@ -121,8 +121,8 @@ const Signin = ({history}) => {
       {errorMessage()}
       {signInForm()}
       {performRedirect()}
-     {/* <p className="text-white text-center">{JSON.stringify(values)}</p> */}
-      <p>{history.location.pathname}</p>
+     {/* <p className="text-white text-center">{JSON.stringify(values)}</p> 
+      <p>{history.location.pathname}</p>*/}
     </Base>
   );
 };

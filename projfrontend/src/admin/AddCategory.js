@@ -27,7 +27,7 @@ const AddCategory = () =>{
 
     event.preventDefault();
     setError("");
-    setSuccess(false)
+    setSuccess(false);
 
     //backend request fired
     createCategory(user._id, token, { name }).then(data => {
