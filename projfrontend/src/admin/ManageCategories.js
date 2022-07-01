@@ -24,6 +24,17 @@ const ManageCategories = () => {
     preload();
   }, []);
 
+  const deleteThisCategory = categoryId => {
+    // deleteProduct(productId, user._id, token).then(data => {
+    //   if (data.error) {
+    //     console.log(data.error);
+    //     alert(data.error);
+    //   } else {
+    //     preload();
+    //   }
+    // });
+  };
+
   return (
     <Base title="Welcome admin" description="Manage products here">
       <h2 className="mb-4">All products:</h2>
@@ -49,13 +60,15 @@ const ManageCategories = () => {
             <div className="col-4">
               <Link
                 className="btn btn-success"
-                to={`/admin/product/update/productId`}
+                to={`/admin/category/update/${category._id}`}
               >
                 <span className="">Update</span>
               </Link>
             </div>
             <div className="col-4">
-              <button onClick={() => {}} className="btn btn-danger">
+              <button onClick={() => {
+                deleteThisCategory(category._id);
+              }} className="btn btn-danger">
                 Delete
               </button>
             </div>

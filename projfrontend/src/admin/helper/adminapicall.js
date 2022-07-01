@@ -28,11 +28,12 @@ export const getCategories = () =>{
   })
   .catch(err => console.log(err))
 }
+
+
 //product calls
 export const createProduct = (userId, token, product) =>{
   return fetch(`${API}/product/create/${userId}`,{
     method: "POST",
-
     headers:{
           Accept: "application/json",
           Authorization: `Bearer ${token}`
@@ -71,7 +72,6 @@ export const deleteProduct = ( productId, userId, token) =>{
 }
 
 //get a product
-
 export const getProduct = productId =>{
   return fetch(
     `${API}/product/${productId}`,{

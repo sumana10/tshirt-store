@@ -14,6 +14,7 @@ export default function Home() {
     getProducts().then(data => {
       if (data.error) {
         setError(data.error);
+        console.log(error);
       } else {
         setProducts(data);
       }
