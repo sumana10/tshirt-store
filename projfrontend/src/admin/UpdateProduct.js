@@ -42,6 +42,7 @@ const UpdateProduct = ({match}) => {
       if (data.error) {
         setValues({ ...values, error: data.error });
       } else {
+          preloadCategories();
         setValues({ 
           ...values, 
           name: data.name,
@@ -50,11 +51,8 @@ const UpdateProduct = ({match}) => {
           category: data.category._id,
           stock: data.stock,
           formdata: new FormData()
-         
-
-        
         });
-        preloadCategories();
+        // console.log(data);
       }
     });
   };
@@ -70,7 +68,9 @@ const UpdateProduct = ({match}) => {
     })
   }
   useEffect(() => {
+    // preloadCategories();
     preload(match.params.productId);
+   
   }, []);
 
   const onSubmit = event => {
@@ -90,6 +90,7 @@ const UpdateProduct = ({match}) => {
           loading: false,
           createdProduct: data.name
         });
+
       }
     });
   };
@@ -151,11 +152,13 @@ const UpdateProduct = ({match}) => {
         />
       </div>
       <div className="form-group m-2">
+      
         <select
           onChange={handleChange("category")}
           className="form-control"
           placeholder="Category"
-        >
+        value={category}>
+        
           <option>Select</option>
           {categories &&
             categories.map((cate, index) => (

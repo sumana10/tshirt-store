@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/helper";
-import { getCategories } from "./helper/adminapicall";
+import { getCategories, removeCategory } from "./helper/adminapicall";
 
 
 const ManageCategories = () => {
@@ -25,14 +25,14 @@ const ManageCategories = () => {
   }, []);
 
   const deleteThisCategory = categoryId => {
-    // deleteProduct(productId, user._id, token).then(data => {
-    //   if (data.error) {
-    //     console.log(data.error);
-    //     alert(data.error);
-    //   } else {
-    //     preload();
-    //   }
-    // });
+    removeCategory(categoryId, user._id, token).then(data => {
+      if (data.error) {
+        console.log(data.error);
+        alert(data.error);
+      } else {
+        preload();
+      }
+    });
   };
 
   return (

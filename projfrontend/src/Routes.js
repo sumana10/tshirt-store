@@ -12,7 +12,9 @@ import ManageCategories from "./admin/ManageCategories";
 import AddProduct from "./admin/AddProduct";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+
 import Cart from "./core/Cart";
+import UpdateCategory from "./admin/UpdateCategory";
 
 
 
@@ -29,6 +31,7 @@ import Cart from "./core/Cart";
        <PrivateRoute  path="/user/dashboard"  exact component={UserDashBoard} />
        <AdminRoute  path="/admin/dashboard"  exact component={AdminDashBoard} />
        <AdminRoute  path="/admin/create/category"  exact component={AddCategory} />
+       <AdminRoute path="/admin/category/update/:categoryId" exact component={UpdateCategory} />
        <AdminRoute  path="/admin/categories"  exact component={ManageCategories} />
        <AdminRoute  path="/admin/create/product"  exact component={AddProduct} />
        <AdminRoute path="/admin/products" exact component={ManageProducts} />
