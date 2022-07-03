@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { addItemToCart, removeItemFromCart } from "./helper/cartHelper";
 
 
-  const Card = ({product, addtoCart = true, removeFromCart = false, setReload = function(f){return f}, reload = undefined}) => {
+  const Card = ({product, addtoCart = true, removeFromCart = false, setReload, reload}) => {
 
     const [redirect, setRedirect] = useState(false);
     const [count, setCount] = useState(product.count);

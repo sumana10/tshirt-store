@@ -7,8 +7,10 @@ import { getProducts } from './helper/coreapicalls';
 
 
 export default function Home() {
-  const [products, setProducts] = useState([])
-  const [error, setError] = useState(false)
+
+  const [products, setProducts] = useState([]);
+
+  const [error, setError] = useState(false);
 
   const loadAllProduct = () => {
     getProducts().then(data => {
@@ -24,15 +26,16 @@ export default function Home() {
   useEffect(() => {
     loadAllProduct();
   }, []);
+
   return (
     <Base title="Home Page" description="Welcome to the Tshirt Store">
     <div className="row text-center">
     <h1 className="text-white mb-5">All of tshirts</h1>
-    <div className="row mx-auto" style={{maxWidth:"1100px"}}>
-    {products.map((tee, index) => {
+    <div className="row mx-auto" style={{width:"1100px", maxWidth:"100%"}}>
+    {products.map((product, index) => {
       return (
         <div key={index} className="col-md-4 col-sm-6 mb-4">
-          <Card product={tee}/>
+          <Card product={product}/>
         </div>
       );
     })}
