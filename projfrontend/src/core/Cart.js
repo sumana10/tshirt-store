@@ -19,7 +19,7 @@ const Cart = () => {
 	const loadAllProducts = () => {
 		return (
 			<div>
-				{products.length > 0 ? (
+				{products?.length > 0 ? (
 					<h2>Looks Awesome🥰</h2>
 				) : (
 					<h2>

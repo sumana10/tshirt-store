@@ -5,12 +5,21 @@ import { Link } from "react-router-dom";
 import StripeCheckoutButton from "react-stripe-checkout";
 import { API } from "../backend";
 import { createOrder } from "./helper/orderHelper";
+import { Redirect } from "react-router-dom";
 
 const StripeCheckout = ({
   products,
   setReload = f => f,
   reload = undefined
 }) => {
+  const [redirect, setRedirect] = useState(false);
+
+  const getARedirect = redirect => {
+    if (redirect) {
+      return <Redirect to="/" />;
+    }
+  };
+
   const [data, setData] = useState({
     loading: false,
     success: false,
@@ -47,23 +56,29 @@ const StripeCheckout = ({
         //call further methods
         const {status} = response;
         console.log("STATUS", status);
-       // cartEmpty();
+        cartEmpty(()=>(setRedirect(true)));
+
       })
       .catch(error => console.log(error));
   };
 
+  
+
   const showStripeButton = () => {
     return isAuthenticated() ? (
+      <>
+      {getARedirect(redirect)}
       <StripeCheckoutButton
-        stripeKey="pk_test_51JT495SDrYAS3txwvUw20bPytHXNKtl0qq85OC0kFJUGUAdfQJ3zi7hTo0uVUj6Tx8DkINbF0OWdGbkZgw1vWQ68004LfiRi7K"
+        stripeKey="pk_test_51JT495SDrYAS3txwnJm1rJLhSFeS45FkB9JaDn2BCIQU7velvQMOmNMMTQfb4o4FC4KPdl1tKbKKt8XVSYXIOcYX00NymcA4P2"
         token={makePayment}
         amount={getFinalAmount() * 100}
-        name="Buy Tshirts"
+        name="I write code Tshirt"
         shippingAddress
         billingAddress
       >
         <button className="btn btn-success">Pay with stripe</button>
       </StripeCheckoutButton>
+      </>
     ) : (
       <Link to="/signin">
         <button className="btn btn-warning">Signin</button>

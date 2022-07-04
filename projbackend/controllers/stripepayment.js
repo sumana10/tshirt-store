@@ -1,14 +1,20 @@
-const stripe = require("stripe")("sk_test_51JT495SDrYAS3txwOX4KaoF3gjlBtB8O8o7IXAPVwLKvyrJWxl1y3wCyo68oIMVfYAJZ6EdggAEV3w4a5TUHa64R006mEhhvux");
+const stripe = require("stripe")
+("sk_test_51JT495SDrYAS3txwSsydJk47jyksk2INEgLccn6u3CeZbD2Hnq27bmL0B42TnpBnXdMqme1w3EPKXoEY8ZsSxePK00z3fVkhNF");
 const uuid = require("uuid/v4");
+
 exports.makepayment = (req, res) => {
+
   const { products, token } = req.body;
+
   console.log("PRODUCTS", products);
 
   let amount = 0;
   products.map(p => {
     amount = amount + p.price;
   });
+
   const idempotencyKey = uuid();
+
   return stripe.customers
     .create({
       email: token.email,
@@ -38,7 +44,10 @@ exports.makepayment = (req, res) => {
             idempotencyKey
           }
         )
-        .then(result => res.status(200).json(result))
+        .then(result => 
+          res.status(200).json(result)
+          
+          )
         .catch(err => console.log(err));
     })
   //  .catch(console.log("FAILED"));
