@@ -24,7 +24,7 @@ const stripRoutes = require("./routes/stripepayment");
 //DB Connection
 
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(process.env.DATABASEATLAS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -48,7 +48,7 @@ app.use("/api", orderRoutes);
 app.use("/api", stripRoutes);
 
 //PORT
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8880;
 
 //Starting a server
 app.listen(port, () => {
